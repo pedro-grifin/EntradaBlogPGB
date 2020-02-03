@@ -1,20 +1,24 @@
-
-/*Clase para manejar las entradas de un blog.
- * La clase se creó el 21/3/1999 por Ana López.
- * Esta es la versión 2.3
+/**
+ * 
+ * @author Pedro Guzman
+ * @version 1.0
+ *
  */
 public class EntradaBlogPGB{
-	//separador es el ccarácter que separa ENTRADA DE del
-	//nombre del autor
+
 	
 	public static char separador=':';
 	private int id;
 	private String texto;
 	private String autor;
 	
-	//Constructor de la clase. recibe el número de entrada, el nombre del autor
-	//de la entrada y el texto que contiene la entrada. Si el número de entrada
-	//es negativo, lanza una excepción.
+	/**
+	 * Constructor de la clase. Si el id es negativo lanza una excepcion. 
+	 * @param id el número de entrada
+	 * @param autor el nombre del autor
+	 * @param texto el texto que contiene la entrada
+	 * @throws IllegalArgumentException
+	 */
 	public EntradaBlogPGB(int id,String autor,String texto)throws IllegalArgumentException{
 		if(id<=0) throw new IllegalArgumentException("El id no puede ser negativo");
 		this.id=id;
@@ -29,30 +33,45 @@ public class EntradaBlogPGB{
 		return cad;
 	}
 	
-	//Devuelve el número de la entrada
+	/**
+	 * 
+	 * @return Devuelve el número de la entrada
+	 */
 	public int getId(){
 		return this.id;
 	}
 	
-	//devuelve el texto completo de la entrada
+	/**
+	 * 
+	 * @return devuelve el texto completo de la entrada
+	 */
 	public String getTexto(){
 		return this.texto;
 	}
 	
-	//devuelve el nombre del autor de la entrada en mayúsculas
+	/**
+	 * 
+	 * @return devuelve el nombre del autor de la entrada en mayúsculas
+	 */
 	public String getAutor(){
 		return this.autor.toUpperCase();
 	}
 	
-	//devuelve el nombre del autor. Ya no se usa. Mejor ver getAutor
+	/**
+	 * 
+	 * @return devuelve el nombre del autor. Ya no se usa. Mejor ver getAutor
+	 */
 	public String devuelveAutor(){
 		return this.autor;
 	}
 	
-	//No tiene porqué tener argumentos.
+	/**
+	 * 
+	 * @param args No tiene porqué tener argumentos.
+	 */
 	public static void main(String[] args) {
                 
-		EntradaBlogPGB e1=new EntradaBlogPGB(-3,"ana","Últimas noticias, está disponible BixBy 2.0");
+		EntradaBlogPGB e1=new EntradaBlogPGB(3,"ana","Últimas noticias, está disponible BixBy 2.0");
 		System.out.println(e1);
 	}
 }
